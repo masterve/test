@@ -1,0 +1,27 @@
+language: cpp
+
+compiler:
+  - gcc
+  - clang
+
+sudo: required
+dist: trusty
+
+addons:
+    packages:
+        - libbz2-dev
+
+script:
+    - pushd src
+    - make
+    - ./ardb-test
+    - storage_engine=leveldb make
+    - ./ardb-test
+    - storage_engine=lmdb make
+    - ./ardb-test
+    - storage_engine=wiredtiger make
+    - ./ardb-test
+    - popd
+
+os:
+  - linux

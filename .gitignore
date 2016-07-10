@@ -1,0 +1,17 @@
+*.o
+*.so
+*.a
+/.svn
+/.libs
+ardb-test*
+ardb-server*
+ardb-repair*
+*.bak
+snappy-*/
+gperftools-*/
+jemalloc-*/
+leveldb-*/
+/Debug
+testdb/
+~*
+.kv_engine
